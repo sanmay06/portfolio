@@ -150,8 +150,8 @@
   }
 
   .project img {
-    height:35vh;
-    width: 23vw;
+    max-height:35vh;
+    max-width: 23vw;
     border-radius:15px;
   }
 
