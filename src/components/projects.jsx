@@ -34,8 +34,8 @@ function Projects() {
     },[vis]);
 
     return <section id="projects">
-            <h1>Projects</h1>
-            <div className="projects">
+            <h1 className="headings">Projects</h1>
+            <div className="projects body">
                 {proj.map((p) => {
                     return <Project name={p.name} description={p.description} lang = {p.language} url = {p.url}/>
                 })}

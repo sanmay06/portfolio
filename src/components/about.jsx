@@ -36,7 +36,7 @@ export default function About() {
         }
     }, [isVisible]);
 
-    return <section id="welcome-section"> <h1 className="wel-head">About Me</h1>
-            <div className="wel-text">I'm a passionate developer skilled in creating efficient tools and dynamic web applications. I utilize React to build responsive, user-friendly interfaces that enhance web experiences. I thrive on problem-solving and enjoy tackling real-world challenges through clean and effective code. Additionally, I have developed file cleanup tools that optimize disk space by deleting large files and removing empty directories. I'm always eager to learn and grow in the ever-evolving tech landscape.</div>
+    return <section id="welcome-section"> <h1 className="wel-head headings">About Me</h1>
+            <div className="wel-text body">I'm a passionate developer skilled in creating efficient tools and dynamic web applications. I utilize React to build responsive, user-friendly interfaces that enhance web experiences. I thrive on problem-solving and enjoy tackling real-world challenges through clean and effective code. Additionally, I have developed file cleanup tools that optimize disk space by deleting large files and removing empty directories. I'm always eager to learn and grow in the ever-evolving tech landscape.</div>
         </section>;
 }
