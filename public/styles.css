@@ -152,7 +152,7 @@
   .project img {
     height:35vh;
     width: 23vw;
-    border: radius 15px;
+    border-radius:15px;
   }
 
   .contact {
