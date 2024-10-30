@@ -1,5 +1,6 @@
 *, *::before, *::after{
     box-sizing: inherit;
+    /*&overflow-x: hidden;*/
   }
 
   * {
@@ -9,13 +10,13 @@
   ul{
     list-style:none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   
   .nav {
     background-color: #be3144;
     height: 6vh;
-    width: 100%;
+    width: 100vw;
     font-style: sans-serif;
     position:fixed;
     top:10px;
@@ -39,8 +40,8 @@
   }
   
   nav {
+    unicode-bidi: isolate;
       display: block;
-      unicode-bidi: isolate;
   }
   
   #welcome-section {
@@ -51,22 +52,21 @@
     height:100vh;
     align-items:center;
     width: 100vw;
-    padding: 6rem 1.25rem; 
     background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
     color:white;
   }
 
   .wel-head {
-    font-size: 2.5rem;
+    font-size: 2.5em;
     color:#f5f5f5;
   }
   .subhead {
     color:#e0e0e0;
-    font-size : 2rem;
+    font-size : 2em;
   }
   .wel-text {
     color: #cccccc;
-    width:150vh;
+    width:90vw;
   }
   #projects {
     display:flex;
@@ -76,7 +76,6 @@
     align-items:center;
     width: 100vw;
     color:#cccccc;
-    padding: 6rem 1.25rem; 
     background-color: #0a0a0a; /* neutral-950 */
     background-image: radial-gradient(
       ellipse 80% 80% at 50% -20%,
@@ -91,7 +90,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 6rem 1.25rem; 
     color:#cccccc;
     justify-content: center;
     background-color: #0f172a;
@@ -104,7 +102,7 @@
 
   .projects {
     width:100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -114,7 +112,7 @@
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 
   .project {
@@ -123,7 +121,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width:50vh;
+    width: 30vw;
     border-radius: 20px;
   }
 
@@ -134,7 +132,7 @@
 
   .project img {
     height:25vh;
-    width: 20vw;
+    width: 10vw;
     border: radius 15px;
   }
 
