@@ -1,13 +1,13 @@
-*, *::before, *::after{
-    box-sizing: inherit;
-    /*&overflow-x: hidden;*/
+
+  body {
+    margin: 0;
   }
 
-  body {margin: 0;}
   * {
     padding:0;
     margin:0;
   }
+
   ul{
     list-style:none;
     display: flex;
@@ -30,9 +30,11 @@
     color: #fff;
   }
   .nav-bar a {
+    position: relative;
+    top:7.5px;
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 2rem;
+    font-size: 1.2em;
+    padding: 2em;
   }
 
   .hovered {
@@ -49,20 +51,28 @@
   }
   
   #welcome-section {
+    min-height:100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+  }
+  .welcome {
+    min-height:100vh;
+    align-items:center;
+    width: 100vw;
     display:flex;
     flex-direction:column;
     justify-content:space-around;
     align-items: center;
-    min-height:100vh;
-    align-items:center;
-    width: 100vw;
-    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
     color:white;
   }
 
   .headings {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
+    font-size: 2.5em;
+    color:#f5f5f5;
   } 
 
   .body {
@@ -70,10 +80,6 @@
     font-weight: 400;
   }
 
-  .wel-head {
-    font-size: 2.5em;
-    color:#f5f5f5;
-  }
   .subhead {
     color:#e0e0e0;
     font-size : 2em;
@@ -150,7 +156,7 @@
   }
 
   .project img {
-    max-height:35vh;
+    max-height:38vh;
     max-width: 23vw;
     border-radius:15px;
   }
