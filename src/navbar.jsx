@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import SlideContext from "./slidecontext";
+import { motion } from "framer-motion";
 
 function Navbar() {
     const [abhov, setab] = useState(false);
@@ -23,8 +24,12 @@ function Navbar() {
         else
             setct(false);
     },[curslide])
-    
-    return <div className="nav">
+
+    return <motion.div className="nav"
+    initial = {{y:-100, z:1}}
+    animate = {{y:0, z:1}}
+    transition = {{delay:1, duration:1}}
+            >
             <nav>
                 <ul className="nav-bar">
                     <li><a className = {abhov?"hovered":""} href="#welcome-section">About</a></li>
@@ -32,7 +37,7 @@ function Navbar() {
                     <li><a className = {cthov?"hovered":""}  href="#contact">Contact</a></li>
                 </ul>
             </nav>
-        </div>
+        </motion.div>
 }
 
 export default Navbar;
