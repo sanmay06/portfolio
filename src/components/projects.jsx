@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import SlideContext from "../slidecontext";
 import proj from "../porj";
 import Project from "../elements/Project";
+import { motion } from "framer-motion";
 
 function Projects() {
     console.log(proj);
@@ -34,7 +35,7 @@ function Projects() {
     },[vis]);
 
     return <section id="projects">
-            <h1 className="headings">Projects</h1>
+            <h1 className="headings">Projects</h1> 
             <div className="projects body">
                 {proj.map((p) => {
                     return <Project name={p.name} description={p.description} lang = {p.language} url = {p.url} k = {p.id}/>
