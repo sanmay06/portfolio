@@ -179,12 +179,28 @@ h1 {
 }
 
 form {
-  height:30vh;
+  height:40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   padding:10px;
+  border-radius: 20px;
+  background: transparent;
+  opacity: 1;
+  border:2px solid #e0e0e0;
+}
+
+form input[type = text], form input[type = email] {
+  height: 4vh;
+  width: 20vw;
+  border-radius: 5px;
+}
+
+form input[type = submit] {
+  padding-top: 10px;
+  height:4vh;
+  width:18vw;
 }
 
 .cont:hover {
