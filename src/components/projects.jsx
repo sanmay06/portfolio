@@ -4,11 +4,12 @@ import proj from "../porj";
 import Project from "../elements/Project";
 
 function Projects() {
-    const ref = useRef();
     const [vis, setVis] = useState(false);
     const { add, remove } = useContext(SlideContext);
 
     useEffect(() => {
+        const ele = document.getElementById("projects");
+
         const obs = new IntersectionObserver(
             ([entry]) => { setVis(entry.isIntersecting)
             }, {
@@ -16,10 +17,11 @@ function Projects() {
                 threshold: 0.1,
             }
         );
-        if (ref.current) obs.observe(ref.current);
-
+        //if (ref.current) obs.observe(ref.current);
+        obs.observe(ele);
         return () => {
-            if (ref.current) obs.unobserve(ref.current);
+            obs.unobserve(ele);
+            //if (ref.current) obs.unobserve(ref.current);
         };
     }, []);
 
@@ -32,9 +34,7 @@ function Projects() {
     }, [vis]);
 
     return (
-        <section id="projects" ref={ref}>
-            {vis && (
-                <>
+        <section id="projects" >
                     <h1 className="headings">Projects</h1>
                     <div className="projects">
                         {proj.map((p) => (
@@ -47,8 +47,6 @@ function Projects() {
                             />
                         ))}
                     </div>
-                </>
-            )}
         </section>
     );
 }

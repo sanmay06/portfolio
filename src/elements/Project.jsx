@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Loan from "../pictures/LoanManagemnet.png";
 import weather from "../pictures/weather.png";
 import clean from "../pictures/cleanup.jpeg";
@@ -8,6 +8,24 @@ import { motion } from "framer-motion";
 const dict = [Loan, weather, clean];
 
 function Project(props) {
+    const [isvis, visible] = useState(false);
+    const ref = useRef();
+
+    useEffect(() => {
+        const obs = new IntersectionObserver(
+            ([entry]) => {visible(entry.isIntersecting)}, {
+                root:null,
+                threshold:0.1
+            }
+        );
+
+        if(ref.current) obs.observe(ref.current);
+
+        return () => {
+            obs.unobserve(ref.current);
+        }
+    },[])
+
     const variant = {
         animateB: {
             opacity: 1,
@@ -32,8 +50,9 @@ function Project(props) {
     };
 
     return (
-        <>
-            <BrowserView>
+        <div ref = {ref}>
+            {isvis &&(<>
+                <BrowserView>
                 <motion.a
                     className="project"
                     href={props.url}
@@ -61,7 +80,8 @@ function Project(props) {
                     </div>
                 </motion.a>
             </MobileView>
-        </>
+            </>)}
+        </div>
     );
 }
 
