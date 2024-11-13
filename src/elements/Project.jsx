@@ -51,8 +51,8 @@ function Project(props) {
                     className="project"
                     href={props.url}
                     variants={variant}
-                    initial="hiddenM"
-                    animate="animateM"
+                    initial="hiddenA"
+                    animate="animateA"
                 >
                     <h1 className="proj-name">{props.name}</h1>
                     <div class='project-cont'>
