@@ -45,7 +45,7 @@ function Project(props) {
             },
         },
         hiddenA: {
-            x:props.k%2==0?"1000vw":"-100vw",
+            x:props.k%2===0?"1000vw":"-100vw",
         }
     };
 

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #1c1c1c; /* Dark gray for better contrast */
+  background-color: #1c1c1c; 
 }
 
 * {
@@ -17,12 +17,12 @@ ul {
 }
 
 .hovered {
-  background-color: #4b6584; /* Deep blue-gray */
-  color: #ffffff; /* White for text contrast */
+  background-color: #4b6584; 
+  color: #ffffff; 
 }
 
 .nav {
-  background-color: #2f3640; /* Dark slate for header */
+  background-color: #2f3640;
   height: 6vh;
   width: 100%;
   font-style: sans-serif;
@@ -38,7 +38,7 @@ ul {
   text-decoration: none;
   font-size: 1.2em;
   padding: 1em 1.5em;
-  color: #dcdde1; /* Light gray */
+  color: #dcdde1;
   transition: background-color 0.3s;
 }
 
@@ -59,7 +59,7 @@ nav {
   width: 100vw;
   display: flex;
   align-items: center;
-  background: radial-gradient(125% 125% at 50% 10%, #141414 40%, #273c75 100%); /* Gradient from dark gray to blue */
+  background: radial-gradient(125% 125% at 50% 10%, #141414 40%, #273c75 100%); 
 }
 
 .welcome {
@@ -69,14 +69,14 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color: #dcdde1; /* Light gray */
+  color: #dcdde1; 
 }
 
 .headings {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 2.5em;
-  color: #f1f2f6; /* Slightly off-white */
+  color: #f1f2f6; 
 }
 
 .body {
@@ -85,7 +85,7 @@ nav {
 }
 
 .subhead {
-  color: #a4b0be; /* Soft blue-gray */
+  color: #a4b0be;
   font-size: 2em;
 }
 
@@ -106,10 +106,10 @@ svg:hover{
   align-items: center;
   width: 100vw;
   color: #dcdde1;
-  background-color: #2d3436; /* Dark charcoal */
+  background-color: #2d3436; 
   background-image: radial-gradient(
     ellipse 80% 80% at 50% -20%,
-    rgba(85, 125, 190, 0.3), /* Light blue hue */
+    rgba(85, 125, 190, 0.3),
     rgba(255, 255, 255, 0)
   );
 }
@@ -122,10 +122,10 @@ svg:hover{
   align-items: center;
   justify-content: center;
   color: #dcdde1;
-  background-color: #1e272e; /* Darker slate */
+  background-color: #1e272e;
   background-image: radial-gradient(
     circle 500px at 50% 200px,
-    #3d3d3d, /* Medium gray */
+    #3d3d3d, 
     transparent
   );
 }
@@ -148,7 +148,7 @@ svg:hover{
   align-items: center;
   width: 25vw;
   border-radius: 20px;
-  background-color: #3a3a3a; /* Medium gray */
+  background-color: #3a3a3a; 
   transition: border 0.3s, transform 0.3s;
 }
 
@@ -193,9 +193,9 @@ form {
   justify-content: space-evenly;
   padding: 10px;
   border-radius: 20px;
-  background: #2c3e50; /* Dark blue-gray */
+  background: #2c3e50; 
   opacity: 1;
-  border: 2px solid #a4b0be; /* Soft blue-gray */
+  border: 2px solid #a4b0be; 
 }
 
 form input[type="text"], form input[type="email"] {
@@ -227,7 +227,6 @@ button {
   color: inherit;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .headings {
     font-size: 2em;
