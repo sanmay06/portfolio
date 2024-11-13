@@ -80,12 +80,12 @@ function Project(props) {
                         <motion.a
                             className="project"
                             href={props.url}
-                            variants={variant}
-                            initial="hiddenB"
-                            animate="animateB"
+                            initial={{ x: props.k % 2 === 0 ? "100vw" : "-100vw" }}
+                            animate={{ x : 0 }}
+                            transition={{delay: props.id * 0.5,duration: 1}}
                         >
                             <h1 className="proj-name">{props.name}</h1>
-                            <div className='project-cont'> {/* Corrected attribute */}
+                            <div className='project-cont'> 
                                 <img src={dict[props.k - 1]} alt={`${props.name} project`} />
                                 <span className="proj-desc">{props.description}</span>
                             </div>
