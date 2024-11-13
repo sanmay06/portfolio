@@ -233,16 +233,17 @@ button {
   }
 
   .project {
+    height: 30vh;
     display: grid;
     grid-template-columns: 40% 60%; 
     grid-template-rows: 20% 20%; 
-    align-content: center;
     max-height: 50vh;
     width: 90vw;
     margin: 10px 0;
   }
   
   .proj-name {
+    height:10vh;
     text-align: center;
     align-items: center;
     grid-row: 1 / 1; 
@@ -252,10 +253,15 @@ button {
   .project img {
     grid-row: 2 / 2; 
     grid-column: 1 / 2; 
+    max-height: 38vh;
+  max-width: 23vw;
+  border-radius: 15px;
+  border: 1px solid white;
   }
   
   .proj-desc {
     grid-row: 2 / 2; 
     grid-column: 2 / 3; 
+    border: 1px solid white;
   }
 }
