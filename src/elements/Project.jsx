@@ -54,9 +54,9 @@ function Project(props) {
                     initial="hiddenM"
                     animate="animateM"
                 >
+                    <h1 className="proj-name">{props.name}</h1>
                     <div class='project-cont'>
                         <img src={dict[props.k - 1]} alt="project-image" />
-                        <h1 className="proj-name">{props.name}</h1>
                         <span className="proj-desc">{props.description}</span>
                     </div>
                 </motion.a>
