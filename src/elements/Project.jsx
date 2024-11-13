@@ -82,7 +82,7 @@ function Project(props) {
                             href={props.url}
                             initial={{ x: props.k % 2 === 0 ? "100vw" : "-100vw" }}
                             animate={{ x : 0 }}
-                            transition={{delay: props.id * 0.5,duration: 0.5,type: "spring"}}
+                            transition={{duration: 0.5,type: "spring"}}
                         >
                             <h1 className="proj-name">{props.name}</h1>
                             <div className='project-cont'> 
