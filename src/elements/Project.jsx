@@ -81,8 +81,8 @@ function Project(props) {
                             className="project"
                             href={props.url}
                             variants={variant}
-                            initial="hiddenA"
-                            animate="animateA"
+                            initial="hiddenB"
+                            animate="animateB"
                         >
                             <h1 className="proj-name">{props.name}</h1>
                             <div className='project-cont'> {/* Corrected attribute */}
