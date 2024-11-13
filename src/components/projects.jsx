@@ -6,18 +6,11 @@ import Project from "../elements/Project";
 function Projects() {
     const ref = useRef();
     const [vis, setVis] = useState(false);
-    const [reloadTrigger, setReloadTrigger] = useState(0); 
     const { add, remove } = useContext(SlideContext);
 
     useEffect(() => {
         const obs = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setVis(true);
-                    setReloadTrigger(prev => prev + 1); 
-                } else {
-                    setVis(false);
-                }
+            ([entry]) => { setVis(entry.isIntersecting)
             }, {
                 root: null,
                 threshold: 0.1,
