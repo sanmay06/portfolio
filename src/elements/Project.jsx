@@ -41,7 +41,6 @@ function Project(props) {
                     animate={{ opacity: 1 }}
                     transition={{ delay: props.k * 0.5, duration: 1 }}
                 >
-                    mobile test
                     <img src={dict[props.k - 1]} alt="project-image" />
                     <h1 className="proj-name">{props.name}</h1>
                     <span className="proj-desc">{props.description}</span>
@@ -55,10 +54,11 @@ function Project(props) {
                     initial="hiddenM"
                     animate="animateM"
                 >
-                    mobile
-                    <img src={dict[props.k - 1]} alt="project-image" />
-                    <h1 className="proj-name">{props.name}</h1>
-                    <span className="proj-desc">{props.description}</span>
+                    <div class='project-cont'>
+                        <img src={dict[props.k - 1]} alt="project-image" />
+                        <h1 className="proj-name">{props.name}</h1>
+                        <span className="proj-desc">{props.description}</span>
+                    </div>
                 </motion.a>
             </MobileView>
         </>
