@@ -4,7 +4,6 @@ const SlideContext = createContext();
 
 export const SlideProvider = ({ children }) => {
     const [curslide, setslide] = useState([]);
-
     const add = (slide) => {
         setslide(prevValue => {
             //console.log(prevValue.includes(slide));
@@ -20,7 +19,7 @@ export const SlideProvider = ({ children }) => {
             return prev.filter(val => val !== slide);
         });
     };
-
+    
     return (
         <SlideContext.Provider value={{ curslide, add, remove }}>
             {children}

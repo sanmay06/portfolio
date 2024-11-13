@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import Loan from "../pictures/LoanManagemnet.png";
 import weather from "../pictures/weather.png";
+import SlideContext from "../slidecontext";
 import clean from "../pictures/cleanup.jpeg";
 import { BrowserView, MobileView } from "react-device-detect";
 import { motion } from "framer-motion";
@@ -10,6 +11,7 @@ const dict = [Loan, weather, clean];
 function Project(props) {
     const [isvis, visible] = useState(false);
     const ref = useRef();
+    const { add, remove } = useContext(SlideContext);
 
     useEffect(() => {
         const obs = new IntersectionObserver(
@@ -26,6 +28,13 @@ function Project(props) {
             if (ref.current) obs.unobserve(ref.current);
         };
     }, []);
+    useEffect(() => {
+        if (isvis) {
+            add("projects");
+        } else {
+            remove("projects");
+        }
+    }, [isvis]);
 
     const variant = {
         animateB: {

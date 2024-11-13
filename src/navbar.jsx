@@ -23,6 +23,7 @@ function Navbar() {
             setct(true);
         else
             setct(false);
+        console.log(curslide)
     },[curslide])
 
     return <motion.div className="nav"
