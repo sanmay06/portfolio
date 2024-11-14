@@ -37,7 +37,7 @@ export default function About() {
     return <section id="welcome-section">  
                 <motion.section className="welcome" 
                     animate = {{x:0,z:0}}   
-                    initial = {{x:'100vw',z:0}} 
+                    initial = {{x:'50vw',z:0}} 
                     transition = {{ duration:1}}
                 > 
                     <h1 className="headings">About Me</h1>  
