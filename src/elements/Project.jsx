@@ -18,7 +18,7 @@ function Project(props) {
             ([entry]) => visible(entry.isIntersecting), // Proper state update
             {
                 root: null,
-                threshold: 0.1,
+                threshold: 0.5,
             }
         );
 
