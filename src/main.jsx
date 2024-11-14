@@ -1,14 +1,18 @@
 import React from "react";
 import Bar from "./navbar";
 import { SlideProvider } from "./slidecontext"; // Import the SlideProvider
-import Content from "./content";
+import About from "./components/about"
+import Projects from "./components/projects"
+import Contact from "./components/contact"
 
 function App() {
     return (
-        <SlideProvider> {/* Use SlideProvider here */}
+        <SlideProvider> 
             <section>
-                <Bar />
-                <Content />
+                {/*<Bar />*/}
+                <About />
+                <Projects />
+                <Contact />
             </section>
         </SlideProvider>
     );
