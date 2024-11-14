@@ -61,7 +61,7 @@ function Project(props) {
 
     return (
         <div ref={ref}>
-            {isvis && (
+            {isvis? (
                 <>
                     <BrowserView>
                         <motion.a
@@ -92,7 +92,7 @@ function Project(props) {
                         </motion.a>
                     </MobileView>
                 </>
-            )}
+            ):(<div className="placeholder"></div>)}
         </div>
     );
 }

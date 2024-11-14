@@ -153,6 +153,11 @@ svg:hover{
   transition: border 0.3s, transform 0.3s;
 }
 
+.placeholder {
+  height: 70vh;
+  width:24vw;
+}
+
 .project:hover {
   border: #dcdde1 solid;
   cursor: pointer;
@@ -251,6 +256,11 @@ button {
     width: 90vw;
     margin: 10px 0;
     background-color: #3a3a3a;
+  }
+
+  .placeholder {
+    height:25vh;
+    width:90vw;
   }
 
   .project-cont {
