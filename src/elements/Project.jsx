@@ -80,7 +80,7 @@ function Project(props) {
                         <motion.a
                             className="project"
                             href={props.url}
-                            initial={{ x: props.k % 2 === 0 ? "50vw" : "-50vw" }}
+                            initial={{ x: props.k % 2 === 0 ? 100 : -100 }}
                             animate={{ x : 0 }}
                             transition={{duration: 2,type: "spring"}}
                         >
