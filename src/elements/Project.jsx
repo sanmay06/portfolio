@@ -55,7 +55,7 @@ function Project(props) {
             },
         },
         hiddenA: {
-            x: props.k % 2 === 0 ? "1000vw" : "-100vw", // Using strict equality
+            x: props.k % 2 === 0 ? "100vw" : "-100vw", // Using strict equality
         },
     };
 
@@ -69,7 +69,7 @@ function Project(props) {
                             href={props.url}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: props.k * 0.5, duration: 1 }}
+                            transition={{ delay: props.k * 0.5, duration: 2 }}
                         >
                             <img src={dict[props.k - 1]} alt={`${props.name} project`} />
                             <h1 className="proj-name">{props.name}</h1>
@@ -80,9 +80,9 @@ function Project(props) {
                         <motion.a
                             className="project"
                             href={props.url}
-                            initial={{ x: props.k % 2 === 0 ? "100vw" : "-100vw" }}
+                            initial={{ x: props.k % 2 === 0 ? "50vw" : "-50vw" }}
                             animate={{ x : 0 }}
-                            transition={{duration: 0.5,type: "spring"}}
+                            transition={{duration: 2,type: "spring"}}
                         >
                             <h1 className="proj-name">{props.name}</h1>
                             <div className='project-cont'> 

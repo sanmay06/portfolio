@@ -56,7 +56,7 @@ nav {
 
 #welcome-section {
   min-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   align-items: center;
   background: radial-gradient(125% 125% at 50% 10%, #141414 40%, #273c75 100%); 
@@ -64,7 +64,7 @@ nav {
 
 .welcome {
   min-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -104,7 +104,7 @@ svg:hover{
   justify-content: center;
   min-height: 100vh;
   align-items: center;
-  width: 100vw;
+  max-width: 100vw;
   color: #dcdde1;
   background-color: #2d3436; 
   background-image: radial-gradient(
@@ -116,7 +116,7 @@ svg:hover{
 
 #contact {
   min-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
