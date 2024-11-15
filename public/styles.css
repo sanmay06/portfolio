@@ -2,6 +2,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   background-color: #1c1c1c; 
+  text-align: center;
 }
 
 * {
@@ -58,6 +59,7 @@ nav {
   min-height: 100vh;
   max-width: 100vw;
   display: flex;
+  text-align: center;
   align-items: center;
   background: radial-gradient(125% 125% at 50% 10%, #141414 40%, #273c75 100%); 
 }
@@ -68,6 +70,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  text-align: center;
   align-items: center;
   color: #dcdde1; 
 }
