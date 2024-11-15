@@ -9,7 +9,7 @@ function App() {
     return (
         <SlideProvider> 
             <section>
-                {/*<Bar />*/}
+                <Bar />
                 <About />
                 <Projects />
                 <Contact />
