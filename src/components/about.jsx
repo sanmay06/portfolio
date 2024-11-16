@@ -34,15 +34,13 @@ export default function About() {
         }
     }, [isVisible]);
 
-    return <section id="welcome-section">  
-                <motion.section className="welcome" 
-                    animate = {{x:0,z:0}}   
-                    initial = {{x:50,z:0}} 
-                    transition = {{ duration:2}}
-                > 
-                    <h1 className="headings">About Me</h1>  
-                    <div className="wel-text body">I'm a passionate developer skilled in creating efficient tools and dynamic web applications. I utilize React to build responsive, user-friendly interfaces that enhance web experiences. I thrive on problem-solving and enjoy tackling real-world challenges through clean and effective code. Additionally, I have developed file cleanup tools that optimize disk space by deleting large files and removing empty directories. I'm always eager to learn and grow in the ever-evolving tech landscape.</div>
-                </motion.section>
-                
-            </section>;
+    return <motion.section id="welcome-section"               
+                animate = {{x:0,z:0}}   
+                initial = {{x:50,z:0}} 
+                transition = {{ duration:2}}
+            > 
+                <h1 className="headings">About Me</h1>  
+                <div className="wel-text body">I'm a passionate developer skilled in creating efficient tools and dynamic web applications. I utilize React to build responsive, user-friendly interfaces that enhance web experiences. I thrive on problem-solving and enjoy tackling real-world challenges through clean and effective code. Additionally, I have developed file cleanup tools that optimize disk space by deleting large files and removing empty directories. I'm always eager to learn and grow in the ever-evolving tech landscape.</div>
+            </motion.section>
+            ;
 }

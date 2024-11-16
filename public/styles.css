@@ -1,7 +1,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #1c1c1c; 
+  background-color: #1e1e1e;
   text-align: center;
 }
 
@@ -18,12 +18,12 @@ ul {
 }
 
 .hovered {
-  background-color: #4b6584; 
-  color: #ffffff; 
+  background-color: #3f536d; /* Subtle change for a softer hover color */
+  color: #ffffff;
 }
 
 .nav {
-  background-color: #2f3640;
+  background-color: #2b2b2b; /* Softer dark background */
   height: 6vh;
   width: 100%;
   font-style: sans-serif;
@@ -39,12 +39,12 @@ ul {
   text-decoration: none;
   font-size: 1.2em;
   padding: 1em 1.5em;
-  color: #dcdde1;
+  color: #c7c7c7; /* Softer gray */
   transition: background-color 0.3s;
 }
 
 .nav-bar a:hover {
-  background-color: #4b6584;
+  background-color: #3f536d;
   color: #ffffff;
 }
 
@@ -59,27 +59,19 @@ nav {
   min-height: 100vh;
   max-width: 100vw;
   display: flex;
-  text-align: center;
-  align-items: center;
-  background: radial-gradient(125% 125% at 50% 10%, #141414 40%, #273c75 100%); 
-}
-
-.welcome {
-  min-height: 100vh;
-  max-width: 100vw;
-  display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
   align-items: center;
-  color: #dcdde1; 
+  color: #c7c7c7; 
+  background: radial-gradient(125% 125% at 50% 10%, #1b1b1b 40%, #2e4963 100%); /* Subtle gradient */
 }
 
 .headings {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 2.5em;
-  color: #f1f2f6; 
+  color: #ececec; 
 }
 
 .body {
@@ -88,34 +80,34 @@ nav {
 }
 
 .subhead {
-  color: #a4b0be;
+  color: #b0b0b0; /* Softer subhead color */
   font-size: 2em;
 }
 
-svg:hover{
-  filter: drop-shadow(0 0 20px lightgrey);
+svg:hover {
+  filter: drop-shadow(0 0 15px #b0b0b0); /* Subtler shadow effect */
 }
 
 .wel-text {
-  color: #dcdde1;
+  color: #c7c7c7;
   width: 90vw;
 }
 
 #projects {
   min-height: 100vh;
   max-width: 100vw;
-  color: #dcdde1;
-  background-color: #2d3436; 
+  color: #c7c7c7;
+  background-color: #2b2b2b;
   background-image: radial-gradient(
     ellipse 80% 80% at 50% -20%,
-    rgba(85, 125, 190, 0.3),
+    rgba(85, 125, 190, 0.2), /* Lower opacity */
     rgba(255, 255, 255, 0)
   );
 }
 
 .proj-head {
   text-align: center;
-  padding: 10px;;
+  padding: 10px;
 }
 
 #contact {
@@ -125,11 +117,11 @@ svg:hover{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #dcdde1;
-  background-color: #1e272e;
+  color: #c7c7c7;
+  background-color: #232323;
   background-image: radial-gradient(
     circle 500px at 50% 200px,
-    #3d3d3d, 
+    #323232, /* Darker tone for subtle change */
     transparent
   );
 }
@@ -141,7 +133,7 @@ svg:hover{
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  color: #f1f2f6;
+  color: #ececec;
 }
 
 .project {
@@ -153,19 +145,19 @@ svg:hover{
   align-items: center;
   width: 25vw;
   border-radius: 20px;
-  background-color: #3a3a3a; 
+  background-color: #343434; /* Softer dark tone */
   transition: border 0.3s, transform 0.3s;
 }
 
 .placeholder {
   height: 70vh;
-  width:24vw;
+  width: 24vw;
 }
 
 .project:hover {
-  border: #dcdde1 solid;
+  border: #c7c7c7 solid;
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.03); /* Softer scale effect */
 }
 
 .project img {
@@ -204,26 +196,26 @@ form {
   justify-content: space-evenly;
   padding: 10px;
   border-radius: 20px;
-  background: #2c3e50; 
+  background: #2b3d4f; /* Slightly softened dark background */
   opacity: 1;
-  border: 2px solid #a4b0be; 
+  border: 2px solid #b0b0b0;
 }
 
 form input[type="text"], form input[type="email"] {
   height: 4vh;
   width: 20vw;
   border-radius: 5px;
-  border: 1px solid #dcdde1;
-  background-color: #1c1c1c;
+  border: 1px solid #c7c7c7;
+  background-color: #232323;
   color: #ffffff;
 }
 
 form textarea {
-  width: 20vw ;
+  width: 20vw;
   height: 6vh;
   border-radius: 5px;
-  border: 1px solid #dcdde1;
-  background-color: #1c1c1c;
+  border: 1px solid #c7c7c7;
+  background-color: #232323;
   color: #ffffff;
 }
 
@@ -231,14 +223,14 @@ form input[type="submit"] {
   padding-top: 10px;
   height: 4vh;
   width: 18vw;
-  background-color: #4b6584;
+  background-color: #3f536d;
   color: #ffffff;
   border-radius: 5px;
   border: none;
 }
 
 .cont:hover {
-  text-shadow: 0px 0px 10px #f1f2f6;
+  text-shadow: 0px 0px 7px #ececec; /* Softer glow */
 }
 
 button {
@@ -261,28 +253,26 @@ button {
   }
 
   .project {
-    height: 25vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height :40vh;
     width: 90vw;
     margin: 10px 0;
-    background-color: #3a3a3a;
+    background-color: #343434;
   }
 
   .placeholder {
-    height:25vh;
-    width:90vw;
+    height: 25vh;
+    width: 90vw;
   }
 
   .project-cont {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
   }
 
   .proj-name {
