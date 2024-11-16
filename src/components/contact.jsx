@@ -14,6 +14,29 @@ function Contacts() {
     const [clicked, setclick] = useState(false);
     const form = useRef();
 
+    const variant = {
+        hiddenM:{
+            y:-20
+        },
+        hiddenA:{
+            y:20
+        },
+        view:{
+            y:0,
+            transition:{
+                duration:2,
+                delay:0.5,
+                type:"swing"
+            }
+        },
+        hover: {
+            scale:2,
+            transition: {
+                duration:0.5
+            }
+        }
+    }
+
     const sendmail = (e) => {
         e.preventDefault();
 
@@ -53,33 +76,63 @@ function Contacts() {
     return <section id="contact">
             <div><h1 className = "headings">Lets Connect</h1></div>
             <div className="contact body">
-                <a href="https://www.linkedin.com/in/sanmay-krishnapur-38b5892b6/">
+                <motion.a href="https://www.linkedin.com/in/sanmay-krishnapur-38b5892b6/"
+                    variants={variant}
+                    whileInView= "view" //{{y: 0}}
+                    initial= "hiddenA"  //{{y: 30}}
+                    whileHover= "hover"  //{{scale:2}}
+                    transition= "view" //{{duration:2,delay:0.5,type:"swing"}} 
+                >
                     <div className="cont">
                         <FaLinkedin size={50}/>
                     </div>
-                </a>
-                <a href="https://wa.me/919353246593">
+                </motion.a>
+                <motion.a href="https://wa.me/919353246593" 
+                     variants={variant}
+                     whileInView= "view" //{{y: 0}}
+                     initial= "hiddenM"  //{{y: 30}}
+                     whileHover= "hover"  //{{scale:2}}
+                     transition= "view" //{{duration:2,delay:0.5,type:"swing"}} 
+                >
                     <div className="cont">
                         <FaWhatsappSquare size={50}/>
                     </div>
-                </a>
-                <a href="https://github.com/sanmay06">
+                </motion.a>
+                <motion.a href="https://github.com/sanmay06"
+                     variants={variant}
+                     whileInView= "view" //{{y: 0}}
+                     initial= "hiddenA"  //{{y: 30}}
+                     whileHover= "hover"  //{{scale:2}}
+                     transition= "view" //{{duration:2,delay:0.5,type:"swing"}} 
+                >
                     <div className="cont">
                         <FaGithub size={50}/>
                     </div>
-                </a>
-                <a href="https://leetcode.com/u/sanmay06/">
+                </motion.a>
+                <motion.a href="https://leetcode.com/u/sanmay06/"
+                    variants={variant}
+                    whileInView= "view" //{{y: 0}}
+                    initial= "hiddenM"  //{{y: 30}}
+                    whileHover= "hover"  //{{scale:2}}
+                    transition= "view" //{{duration:2,delay:0.5,type:"swing"}} 
+                >
                     <div className="cont">
                         <SiLeetcode size={50}/>
                     </div>
-                </a>
-                <button onClick={() => {
+                </motion.a>
+                <motion.button onClick={() => {
                     setclick(!clicked);
-                }}  >
+                }}  
+                variants={variant}
+                whileInView= "view" //{{y: 0}}
+                initial= "hiddenA"  //{{y: 30}}
+                whileHover= "hover"  //{{scale:2}}
+                transition= "view" //{{duration:2,delay:0.5,type:"swing"}} 
+                >
                     <div className="cont">
                         <BsEnvelope size={50}/>
                     </div>
-                </button>
+                </motion.button>
             </div>
             {
                 clicked && (<form ref={form} onSubmit={sendmail} className="mail">
