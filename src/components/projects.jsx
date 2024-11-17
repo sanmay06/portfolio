@@ -12,7 +12,7 @@ function Projects() {
 
     const variant = {
         hidden: {
-            scale: 1.5,
+            scale: 1.2,
             y:20
         },
         animate: {
