@@ -57,7 +57,7 @@ nav {
 
 #welcome-section {
   min-height: 100vh;
-  max-width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -138,9 +138,9 @@ svg:hover {
 
 .project {
   height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 100;
+  grid-template-rows: 20 / 40/ 40;
   text-align: center;
   align-items: center;
   width: 25vw;
@@ -154,6 +154,10 @@ svg:hover {
   width: 24vw;
 }
 
+.proj-desc {
+  padding: 15px;
+}
+
 .project:hover {
   border: #c7c7c7 solid;
   cursor: pointer;
@@ -161,8 +165,8 @@ svg:hover {
 }
 
 .project img {
-  max-height: 38vh;
-  max-width: 23vw;
+  max-height: 30vh;
+  max-width: 20vw;
   border-radius: 15px;
 }
 
@@ -237,6 +241,22 @@ button {
   background: transparent;
   border: 0;
   color: inherit;
+}
+
+#techno {
+  width:100vw;
+}
+
+.tech-cont {
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tech {
+  padding: 10px;
 }
 
 @media (max-width: 768px) {
