@@ -52,7 +52,7 @@ export default function About() {
                     initial = {{x:50,z:0}} 
                     transition = {{ duration:2, delay:0.3}}
                 >
-                    I'm a passionate developer skilled in creating efficient tools and dynamic web applications. I utilize React to build responsive, user-friendly interfaces that enhance web experiences. I thrive on problem-solving and enjoy tackling real-world challenges through clean and effective code. Additionally, I have developed file cleanup tools that optimize disk space by deleting large files and removing empty directories. I'm always eager to learn and grow in the ever-evolving tech landscape.
+                    Hi, I'm Sanmay Krishnapur—a developer passionate about creating software that makes a difference. With a strong foundation in Java, I build efficient and user-friendly web applications and solutions. I enjoy problem-solving and thrive on tackling challenges with clean, effective code. Always curious and eager to learn, I strive to grow with the evolving tech landscape and bring value through my work.
                 </motion.div>
                 <Technology />
             </section>
