@@ -1,82 +1,86 @@
-import React from "react";
-import { FaReact } from "react-icons/fa";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaJava } from "react-icons/fa";
+import React, { useEffect, useRef } from "react";
+import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaBootstrap, FaPython } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { FaBootstrap } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { TbBrandReactNative } from "react-icons/tb";
+import { SiFlask, SiSelenium } from "react-icons/si";
+import gsap from "gsap";
 
-function Technology () {
+function Technology() {
+  const techRefs = useRef([]);
 
-    const variant = {
-        inviewA:{
-            y:[8,0,-10,0,8],
-            transition:{
-                duration:5,
-                repeat: Infinity,
-                repeatType: 'loop',
-            }
-        },
-        inviewB:{
-            y:[10,0,-8,0,10],
-            transition:{
-                duration:4,
-                repeat: Infinity,
-                repeatType: 'loop',
-            }
-        },inviewC:{
-            y:[7,0,-12,0,7],
-            transition:{
-                duration:6,
-                repeat: Infinity,
-                repeatType: 'loop',
-            }
-        },
+  useEffect(() => {
+    gsap.set('.tech', { y: 20 });
+    gsap.to('.tech', {
+      y: -10,
+      duration: 1.2,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+      stagger: {
+        each: 0.1,
+        grid: 'auto',
+        // amount: 1.5,
+        from: "center",
+      },
+    });
+  }, []);
 
-    }
+  const styles = {
+    techno: {
+      width: "100vw",
+      alignItems: "center",
+      display: "flex",
+      flexDirection: "column",
+    },
+    container: {
+      width: "100vw",
+      display: "flex",
+      justifyContent: "center",
+      flexWrap: "wrap",
+      alignItems: "center",
+    },
+    tech: {
+      padding: "0 15px",
+      willChange: "transform", 
+    },
+    headings: {
+      fontFamily: "'Poppins', sans-serif",
+      fontWeight: 700,
+      fontSize: "2.5em",
+      color: "#ececec",
+    },
+  };
 
-    return <section id='techno'>
-        <h1 className="tech-heading headings">Technologies</h1>
-        <div className="tech-cont">
-            <motion.div className="tech"
-                variants={variant}
-                whileInView="inviewA"
-            >
-                <FaReact size={50}/>
-            </motion.div>
-            <motion.div className="tech"
-                variants={variant}
-                whileInView="inviewB"
-            >
-                <FaHtml5 size={50}/>
-            </motion.div>
-            <motion.div className="tech"
-                variants={variant}
-                whileInView="inviewC"
-            >
-                <FaCss3Alt size={50}/>
-            </motion.div>
-            <motion.div className="tech"
-                variants={variant}
-                whileInView="inviewA"
-            >
-                <FaJava size={50}/>
-            </motion.div>
-            <motion.div className="tech"
-                variants={variant}
-                whileInView="inviewB"
-            >
-                <IoLogoJavascript size={50}/>
-            </motion.div>
-            <motion.div className="tech"
-                variants={variant}
-                whileInView="inviewC"
-            >
-                <FaBootstrap size={50}/>
-            </motion.div>
-        </div>
+  const icons = [
+    <FaReact size={50} />,
+    <FaHtml5 size={50} />,
+    <FaCss3Alt size={50} />,
+    <FaJava size={50} />,
+    <IoLogoJavascript size={50} />,
+    <FaBootstrap size={50} />,
+    <TbBrandReactNative size={50} />,
+    <SiFlask size={50} />,
+    <FaPython size={50} />,
+    <SiSelenium size = {50} />
+  ];
+
+  return (
+    <section id="techno" style={styles.techno}>
+      <h1 className="tech-heading" style={styles.headings}>Technologies</h1>
+      <div className="tech-cont" style={styles.container}>
+        {icons.map((icon, index) => (
+          <div
+            key={index}
+            className="tech"
+            style={styles.tech}
+            ref={(el) => (techRefs.current[index] = el)}
+          >
+            {icon}
+          </div>
+        ))}
+      </div>
     </section>
+  );
 }
 
 export default Technology;

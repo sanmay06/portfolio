@@ -1,75 +1,100 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect} from "react";
 import proj from "../porj";
-import SlideContext from "../slidecontext";
 import Loan from "../pictures/LoanManagemnet.png";
 import weather from "../pictures/weather.png";
 import clean from "../pictures/cleanup.jpeg";
-import { animate, motion } from "framer-motion";
+// import gsap from "gsap";
 
 const dict = [Loan, weather, clean];
 
 function Projects() {
 
-    const variant = {
-        hidden: {
-            scale: 1.2,
-            y:20
+    const style = {
+        projects: {
+          minHeight: '100vh',
+          maxWidth: '100vw',
+          padding: '2rem 1rem',
+          color: '#c7c7c7',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         },
-        animate: {
-            scale:1,
-            y:0,
-        }
-    }
+        heading: {
+          fontFamily: "'Poppins', sans-serif",
+          fontWeight: 700,
+          fontSize: '3em',
+          color: '#f0f0f0',
+          textAlign: 'center',
+          marginBottom: '2rem',
+        },
+        container: {
+          width: '100%',
+          maxWidth: '1200px',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '2rem',
+        },
+        project: {
+          width: '300px',
+          height: '450px',
+          display: 'grid',
+          gridTemplateRows: '60px 1fr auto',
+          backgroundColor: '#2c2c2c',
+          borderRadius: '16px',
+          boxShadow: '0 6px 18px rgba(0,0,0,0.4)',
+          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+          textAlign: 'center',
+          overflow: 'hidden',
+          cursor: 'pointer',
+        },
+        projectHover: {
+          transform: 'scale(1.05)',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.6)',
+        },
+        image: {
+          width: '100%',
+          height: '180px',
+          objectFit: 'cover',
+        },
+        projectTitle: {
+          fontSize: '1.4em',
+          fontWeight: 600,
+          color: '#ffffff',
+          padding: '0.5rem 1rem',
+          fontFamily: "'Poppins', sans-serif",
+        },
+        projectDesc: {
+          padding: '1rem',
+          fontSize: '0.95em',
+          lineHeight: '1.5',
+          color: '#cccccc',
+        },
+      };
+       
+      
 
-    const [isVisible, setvis] = useState(false);
-    const { add, remove } = useContext(SlideContext);
-
-    useEffect( () => {
-        const obs = new IntersectionObserver(([entry]) =>{setvis(entry.isIntersecting);},{threshold:0.1, root:null,})
-        const ele = document.getElementById("projects");
-        if(ele) 
-            obs.observe(ele);
-
-        return ( () => {
-            obs.unobserve(ele);
-        })
-    },[])
-
-    useEffect( () => {
-        if(isVisible)
-            add("projects");
-        else
-            remove("projects");
-    },[isVisible])
+    useEffect(() => {
+        
+    }, []);
 
     return (
-        <section id="projects">
-                    <h1 className="proj-head headings">Projects</h1>
-                    <div className="projects">
+        <section id="projects" style={style.projects}>
+                    <h1 className="proj-head headings" style={style.heading}>Projects</h1>
+                    <div className="projects" style={style.container}>
                         {proj.map((p) => (
-                            <motion.a
-                            className="project"
-                            href={p.url}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity : 1 }}
-                            transition={{duration: 1}}
-                        >
-                            <motion.h1 className="proj-name"
-                                variants={variant}    
-                                whileInView='animate'
-                                initial="hidden"
-                                transition={{duration: 1, delay:0.5}}
-                            >{p.name}</motion.h1>
-                                <motion.div className='project-cont'
-                                    variants={variant}    
-                                    whileInView="animate"
-                                    initial="hidden"
-                                    transition={{duration: 1, delay:0.5}}
+                            <a className="project" style = {style.project} href={p.url}>
+                            <h1 className="proj-name"
+                                style = {style.projectTitle}
+            
+                            >{p.name}</h1>
+                                <div className='project-cont'
+    
                                 > 
-                                    <img src={dict[p.id - 1]} alt={`${p.name} project`} />
-                                    <div className="proj-desc">{p.description}</div>
-                                </motion.div>
-                        </motion.a>
+                                    <img src={dict[p.id - 1]} alt={`${p.name} project`} style = {style.image} />
+                                    <div className="proj-desc" style = {style.projectDesc}>{p.description}</div>
+                                </div>
+                            </a>
                         ))}
                     </div>
         </section>
