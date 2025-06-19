@@ -82,9 +82,10 @@ function Projects() {
       pin: true,
       scrub: true,
       start: "top top",
-      end: () => `+=${cards.length * childHeight}`,
-      snap: 1 / (cards.length - 1),
+      end: () => `+=${(cards.length * childHeight) + document.querySelector('.proj-head')}`,
+      snap: 1 / (cards.length),
       markers: true,
+      onUpdate: self => console.log(self.progress.toFixed(2)),
       invalidateOnRefresh: true,
     });
     
@@ -110,7 +111,7 @@ function Projects() {
     heading: {
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 700,
-      fontSize: "3.5vw",
+      fontSize: "6vw",
       color: "#f0f0f0",
       textAlign: "center",
       height: "10vh",
@@ -126,7 +127,7 @@ function Projects() {
       width: "100vw",
       height: "100vh",
       display: "grid",
-      gridTemplateRows: orient ? "10vh 60vh 20vh" : "40vh 60vh",
+      gridTemplateRows: orient ? "15vh 45vh 40vh" : "40vh 60vh",
       gridTemplateColumns: orient ? "100%" : "50% 50%",
       gridTemplateAreas: orient
         ? `"title" "image" "description"`
@@ -143,7 +144,7 @@ function Projects() {
     },
     projectTitle: {
       gridArea: "title",
-      fontSize: "2.5vw",
+      fontSize: "5vw",
       fontWeight: 600,
       color: "#ffffff",
       fontFamily: "'Poppins', sans-serif",
@@ -151,7 +152,7 @@ function Projects() {
     },
     projectDesc: {
       gridArea: "description",
-      fontSize: "1.2vw",
+      fontSize: "2.5vw",
       lineHeight: 1.6,
       color: "#cccccc",
       padding: "2vh 2vw",
