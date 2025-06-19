@@ -111,7 +111,7 @@ function Projects() {
     heading: {
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 700,
-      fontSize: "6vw",
+      fontSize: orient? '5vh': '2.5vw',
       color: "#f0f0f0",
       textAlign: "center",
       height: "10vh",
@@ -144,7 +144,7 @@ function Projects() {
     },
     projectTitle: {
       gridArea: "title",
-      fontSize: "5vw",
+      fontSize: orient? "5vw":"5vh",
       fontWeight: 600,
       color: "#ffffff",
       fontFamily: "'Poppins', sans-serif",
@@ -152,7 +152,7 @@ function Projects() {
     },
     projectDesc: {
       gridArea: "description",
-      fontSize: "2.5vw",
+      fontSize: orient? "2.5vw": "2.5vh",
       lineHeight: 1.6,
       color: "#cccccc",
       padding: "2vh 2vw",
