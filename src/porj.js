@@ -6,7 +6,7 @@ const project = [
         language: "React, Flask, Postgress SQL",
         description: "A Full Stack Website which uses React for front end, flask for backend and PostgressSQL for database, it scrapes job posts from various websites and prints them on the page",
         bigdesc: "The Job Aggregator is a full-stack web application that collects and displays job postings from various online sources. The frontend is built with React, providing a responsive and user-friendly interface. The backend is developed using Flask, which handles API requests and data processing. Job data is scraped from multiple websites and stored in a PostgreSQL database. Users can browse the latest job listings, filter results, and explore job opportunities all in one place. The platform simplifies the job-hunting process by aggregating multiple sources into a single, efficient interface.",
-        url: {deployed: "https://job-aggregator-kappa.vercel.app/", frontEnd:"https://github.com/sanmay06/Job-Aggregator"}
+        url:'https://job-aggregator-kappa.vercel.app/' //{deployed: "https://job-aggregator-kappa.vercel.app/", frontEnd:"https://github.com/sanmay06/Job-Aggregator"}
     },
     {
         id: 5,
@@ -14,7 +14,7 @@ const project = [
         language: "React Native, Firebase",
         description: "A Home Automation App from which you can controll home electronics, appliances, switches, fans ect. ",
         bigdesc: "Wave is a mobile-based Home Automation application built using React Native and Firebase. It enables users to remotely control household appliances such as lights, fans, and switches directly from their smartphones. The app provides real-time status updates and allows toggling individual devices. Firebase handles authentication, real-time database updates, and cloud storage, ensuring seamless performance and scalability. With an intuitive interface and smart connectivity, Wave offers a modern, convenient solution for managing smart home environments efficiently.",
-        url: ""
+        url: "https://github.com/sanmay06/Wave/"
     },
     {
         id : 1,

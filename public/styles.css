@@ -28,26 +28,26 @@ body {
   color: #c7c7c7; 
   background: radial-gradient(125% 125% at 50% 10%, #1b1b1b 40%, #2e4963 100%); 
 } */
-
+/* 
 .headings {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 2.5em;
   color: #ececec; 
-}
+} */
 
 .body {
   font-family: "Roboto", serif;
   font-weight: 400;
 }
-
+/* 
 .subhead {
-  color: #b0b0b0; /* Softer subhead color */
+  color: #b0b0b0; 
   font-size: 2em;
-}
+} */
 
 svg:hover {
-  filter: drop-shadow(0 0 15px #b0b0b0); /* Subtler shadow effect */
+  filter: drop-shadow(0 0 15px #b0b0b0);
 }
 /* 
 .wel-text {
@@ -214,7 +214,7 @@ button {
 .tech {
   padding: 15px;
 } */
-
+/* 
 @media (max-width: 768px) {
   .headings {
     font-size: 2em;
@@ -263,4 +263,4 @@ button {
   .proj-desc {
     text-align: center;
   }
-}
+} */

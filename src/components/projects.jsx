@@ -1,104 +1,194 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import proj from "../porj";
 import Loan from "../pictures/LoanManagemnet.png";
 import weather from "../pictures/weather.png";
 import clean from "../pictures/cleanup.jpeg";
-// import gsap from "gsap";
+import job from "../pictures/Job Aggregator.png";
+import wave from "../pictures/Wave.png";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const dict = [Loan, weather, clean];
+gsap.registerPlugin(ScrollTrigger);
+
+const dict = [Loan, weather, clean, job, wave];
 
 function Projects() {
+  const ref = useRef();
+  const [orient, setOrient] = useState(window.innerHeight > window.innerWidth);
+  const scrollTriggerRef = useRef(null);
 
-    const style = {
-        projects: {
-          minHeight: '100vh',
-          maxWidth: '100vw',
-          padding: '2rem 1rem',
-          color: '#c7c7c7',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        },
-        heading: {
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 700,
-          fontSize: '3em',
-          color: '#f0f0f0',
-          textAlign: 'center',
-          marginBottom: '2rem',
-        },
-        container: {
-          width: '100%',
-          maxWidth: '1200px',
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '2rem',
-        },
-        project: {
-          width: '300px',
-          height: '450px',
-          display: 'grid',
-          gridTemplateRows: '60px 1fr auto',
-          backgroundColor: '#2c2c2c',
-          borderRadius: '16px',
-          boxShadow: '0 6px 18px rgba(0,0,0,0.4)',
-          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-          textAlign: 'center',
-          overflow: 'hidden',
-          cursor: 'pointer',
-        },
-        projectHover: {
-          transform: 'scale(1.05)',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.6)',
-        },
-        image: {
-          width: '100%',
-          height: '180px',
-          objectFit: 'cover',
-        },
-        projectTitle: {
-          fontSize: '1.4em',
-          fontWeight: 600,
-          color: '#ffffff',
-          padding: '0.5rem 1rem',
-          fontFamily: "'Poppins', sans-serif",
-        },
-        projectDesc: {
-          padding: '1rem',
-          fontSize: '0.95em',
-          lineHeight: '1.5',
-          color: '#cccccc',
-        },
-      };
-       
-      
+  useEffect(() => {
+    const handleResize = () => {
+      setOrient(window.innerHeight > window.innerWidth);
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    useEffect(() => {
-        
-    }, []);
+  useEffect(() => {
+    const t1 = gsap.timeline();
+    const container = ref.current;
+    const cards = gsap.utils.toArray(container.children);
 
-    return (
-        <section id="projects" style={style.projects}>
-                    <h1 className="proj-head headings" style={style.heading}>Projects</h1>
-                    <div className="projects" style={style.container}>
-                        {proj.map((p) => (
-                            <a className="project" style = {style.project} href={p.url}>
-                            <h1 className="proj-name"
-                                style = {style.projectTitle}
-            
-                            >{p.name}</h1>
-                                <div className='project-cont'
+    if (!cards.length) return;
+
+    const childHeight = cards[0].getBoundingClientRect().height;
+
+    const initCards = () => {
+      t1.clear();
     
-                                > 
-                                    <img src={dict[p.id - 1]} alt={`${p.name} project`} style = {style.image} />
-                                    <div className="proj-desc" style = {style.projectDesc}>{p.description}</div>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-        </section>
-    );
+      cards.forEach((card, i) => {
+        // initial stacking
+        gsap.set(card, {
+          y: i * childHeight,
+          top: 0,
+          left: 0,
+          position: "absolute",
+          zIndex: cards.length - i,
+        });
+    
+        // animate current card from stacked y-position to 0
+        if (i > 0) {
+          t1.to(
+            card,
+            {
+              y: 0,
+              duration: 0.5,
+              ease: "none",
+            },
+            i // each card enters after the previous one finishes
+          );
+        }
+        if (i !== 0 )
+          t1.to(
+            cards[i - 1],
+            {
+              x: '-100vw',
+              ease: 'none',
+            },
+            i
+          )
+      });
+    };
+    
+
+    initCards();
+
+    scrollTriggerRef.current?.kill();
+    scrollTriggerRef.current = ScrollTrigger.create({
+      animation: t1,
+      trigger: ".projects",
+      pin: true,
+      scrub: true,
+      start: "top top",
+      end: () => `+=${cards.length * childHeight}`,
+      snap: 1 / (cards.length - 1),
+      markers: true,
+      invalidateOnRefresh: true,
+    });
+    
+
+    ScrollTrigger.addEventListener("refreshInit", initCards);
+
+    return () => {
+      ScrollTrigger.removeEventListener("refreshInit", initCards);
+      scrollTriggerRef.current?.kill();
+    };
+  }, [orient]);
+
+  const style = {
+    projects: {
+      width: "100vw",
+      color: "#c7c7c7",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      overflow: "hidden",
+      position: "relative",
+    },
+    heading: {
+      fontFamily: "'Poppins', sans-serif",
+      fontWeight: 700,
+      fontSize: "3.5vw",
+      color: "#f0f0f0",
+      textAlign: "center",
+      height: "10vh",
+      margin: 0,
+      padding: 0,
+    },
+    container: {
+      width: "100vw",
+      height: "100vh",
+      position: "relative",
+    },
+    project: {
+      width: "100vw",
+      height: "100vh",
+      display: "grid",
+      gridTemplateRows: orient ? "10vh 60vh 20vh" : "40vh 60vh",
+      gridTemplateColumns: orient ? "100%" : "50% 50%",
+      gridTemplateAreas: orient
+        ? `"title" "image" "description"`
+        : `"image title" "image description"`,
+      textAlign: "center",
+      cursor: "pointer",
+      position: "absolute", // necessary for stacking
+    },
+    image: {
+      gridArea: "image",
+      width: "100%",
+      height: "95%",
+      objectFit: "contain",
+    },
+    projectTitle: {
+      gridArea: "title",
+      fontSize: "2.5vw",
+      fontWeight: 600,
+      color: "#ffffff",
+      fontFamily: "'Poppins', sans-serif",
+      padding: "1vh 2vw",
+    },
+    projectDesc: {
+      gridArea: "description",
+      fontSize: "1.2vw",
+      lineHeight: 1.6,
+      color: "#cccccc",
+      padding: "2vh 2vw",
+    },
+  };
+
+  return (
+    <section className="projects" style={style.projects}>
+      <h1 className="proj-head headings" style={style.heading}>
+        My Projects
+      </h1>
+      <div className="projectsCont" style={style.container} ref={ref}>
+        {proj.map((p) => (
+          <a
+            className="project"
+            style={style.project}
+            href={p.url}
+            key={p.id}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h1 className="proj-name" style={style.projectTitle}>
+              {p.name}
+            </h1>
+            <img
+              src={dict[p.id - 1]}
+              alt={`${p.name} project`}
+              style={style.image}
+            />
+            <div className="proj-desc" style={style.projectDesc}>
+              {p.bigdesc}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Projects;
