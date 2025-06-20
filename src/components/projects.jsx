@@ -39,16 +39,14 @@ function Projects() {
       t1.clear();
     
       cards.forEach((card, i) => {
-        // initial stacking
         gsap.set(card, {
           y: i * childHeight,
           top: 0,
           left: 0,
           position: "absolute",
           zIndex: cards.length - i,
-        });
+        })
     
-        // animate current card from stacked y-position to 0
         if (i > 0) {
           t1.to(
             card,
@@ -57,7 +55,7 @@ function Projects() {
               duration: 0.5,
               ease: "none",
             },
-            i // each card enters after the previous one finishes
+            i - 1
           );
         }
         if (i !== 0 )
@@ -67,7 +65,7 @@ function Projects() {
               x: '-100vw',
               ease: 'none',
             },
-            i
+            i - 1
           )
       });
     };
@@ -81,9 +79,10 @@ function Projects() {
       trigger: ".projects",
       pin: true,
       scrub: true,
-      start: "top top",
+      start: "top top", 
+      // start: () => `+=${childHeight / 2}`,
       end: () => `+=${(cards.length * childHeight) + document.querySelector('.proj-head')}`,
-      snap: 1 / (cards.length),
+      snap: 1 / (cards.length - 1),
       markers: true,
       onUpdate: self => console.log(self.progress.toFixed(2)),
       invalidateOnRefresh: true,
