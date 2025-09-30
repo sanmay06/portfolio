@@ -83,7 +83,7 @@ function Projects() {
       // start: () => `+=${childHeight / 2}`,
       end: () => `+=${(cards.length * childHeight) + document.querySelector('.proj-head')}`,
       snap: 1 / (cards.length - 1),
-      markers: true,
+      // markers: true,
       onUpdate: self => console.log(self.progress.toFixed(2)),
       invalidateOnRefresh: true,
     });
