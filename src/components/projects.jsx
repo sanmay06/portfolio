@@ -5,12 +5,13 @@ import weather from "../pictures/weather.png";
 import clean from "../pictures/cleanup.jpeg";
 import job from "../pictures/Job Aggregator.png";
 import wave from "../pictures/Wave.png";
+import majorProject from "../pictures/major-project.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const dict = [Loan, weather, clean, job, wave];
+const dict = [Loan, weather, clean, job, wave, majorProject];
 
 function Projects() {
   const ref = useRef();
@@ -156,6 +157,7 @@ function Projects() {
       color: "#cccccc",
       padding: "2vh 2vw",
     },
+    
   };
 
   return (
@@ -168,7 +170,7 @@ function Projects() {
           <a
             className="project"
             style={style.project}
-            href={p.url}
+            // href={p.url}
             key={p.id}
             target="_blank"
             rel="noopener noreferrer"
@@ -183,6 +185,44 @@ function Projects() {
             />
             <div className="proj-desc" style={style.projectDesc}>
               {p.bigdesc}
+              <br />
+              {Object.keys(p.link).map((linkName) => (
+                <a
+                  key={linkName}
+                  href={p.link[linkName]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    margin: '1vh 1vw',
+                    padding: orient ? '1vh 3vw' : '1vh 1.5vw',
+                    fontSize: orient ? '2.2vw' : '2vh',
+                    color: '#ffffff',
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: 500,
+                    transition: 'all 0.3s ease',
+                    backdropFilter: 'blur(10px)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                >
+                  {linkName.replace(/_/g, ' ')}
+                </a>
+              ))}
+
             </div>
           </a>
         ))}
