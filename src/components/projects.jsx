@@ -167,13 +167,13 @@ function Projects() {
       </h1>
       <div className="projectsCont" style={style.container} ref={ref}>
         {proj.map((p) => (
-          <a
+          <div
             className="project"
             style={style.project}
             // href={p.url}
             key={p.id}
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
             <h1 className="proj-name" style={style.projectTitle}>
               {p.name}
@@ -224,7 +224,7 @@ function Projects() {
               ))}
 
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>

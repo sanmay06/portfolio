@@ -15,7 +15,7 @@ const project = [
         bigdesc: "The Job Aggregator is a full-stack web application that collects and displays job postings from various online sources. The frontend is built with React, providing a responsive and user-friendly interface. The backend is developed using Flask, which handles API requests and data processing. Job data is scraped from multiple websites and stored in a PostgreSQL database. Users can browse the latest job listings, filter results, and explore job opportunities all in one place. The platform simplifies the job-hunting process by aggregating multiple sources into a single, efficient interface.",
         link: {
             deployed_link: "https://job-aggregator-kappa.vercel.app/",
-            github_link: "https://github.com/sanmay06/Job-Aggregator",
+            github_link: "https://github.com/sanmay06/job-Aggregator",
         },
         // url:'https://job-aggregator-kappa.vercel.app/' //{deployed: "https://job-aggregator-kappa.vercel.app/", frontEnd:"https://github.com/sanmay06/Job-Aggregator"}
     },
