@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaBootstrap, FaPython } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { TbBrandReactNative } from "react-icons/tb";
-import { SiFlask, SiSelenium } from "react-icons/si";
+import { SiFlask, SiSelenium, SiIpfs, SiFastapi } from "react-icons/si";
+import { RiFirebaseFill } from "react-icons/ri";
 import gsap from "gsap";
 
 function Technology() {
@@ -61,7 +62,10 @@ function Technology() {
     <TbBrandReactNative size={50} />,
     <SiFlask size={50} />,
     <FaPython size={50} />,
-    <SiSelenium size = {50} />
+    <SiSelenium size = {50} />,
+    <SiIpfs size = {50}/>, 
+    <SiFastapi size = {50} />,
+    <RiFirebaseFill size = {50} />
   ];
 
   return (
