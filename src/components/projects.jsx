@@ -103,7 +103,7 @@ function Projects() {
       alignItems: "center",
       overflow: "hidden",
       position: "relative",
-      backgroundColor: "#0a0e27",
+      // backgroundColor: "#0a0e27",
     },
     heading: {
       fontFamily: "'Poppins', sans-serif",
