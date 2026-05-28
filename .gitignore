@@ -21,3 +21,25 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# claude
+.claude/
+CLAUDE.md
+
+# claude memory
+memory/
+
+# ide / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# operating system
+Thumbs.db
+*.bak
+
+# lock files (optional - keep one)
+# package-lock.json
+# yarn.lock

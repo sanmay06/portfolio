@@ -6,32 +6,40 @@ import Contact from "./components/contact"
 import Lenis from "lenis";
 import Background from "./components/Background";
 import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
     useEffect(() => {
         const lenis = new Lenis({
-            lerp: 0.1,
-            smooth: true
+            lerp: 0.08,
+            smooth: true,
         });
+
         function raf(time) {
             lenis.raf(time);
-            // ScrollTrigger.update();
             requestAnimationFrame(raf);
-        }   
+        }
         requestAnimationFrame(raf);
+
         lenis.on("scroll", ScrollTrigger.update);
+
+        return () => {
+            lenis.destroy();
+        };
     }, []);
 
     return (
-        <section >
+        <div style={{ position: 'relative', minHeight: '100vh' }}>
             <Background />
-            <About />
-            {/* <div style={{position: 'relative'}}> */}
+            <main>
+                <About />
                 <Projects />
-            {/* </div> */}
-            <Contact />
-        </section>
+                <Contact />
+            </main>
+        </div>
     );
 }
 
